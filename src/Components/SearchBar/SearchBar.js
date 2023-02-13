@@ -23,7 +23,12 @@ class SearchBar extends Component {
     render() {
         return (
             <div className=" serach-bar-container ui input">
-                <input type="text" onChange={this.inputChange} placeholder="Search..." />
+                <input type="text" onKeyPress={(e) =>{
+              if(e.key === "Enter"){
+                this.serachinput();
+              };
+                } } 
+                onChange={this.inputChange} placeholder="Search..." />
                 <button className="ui icon button" onClick={this.serachinput}>
                     <i className="search icon"></i>
                 </button>
