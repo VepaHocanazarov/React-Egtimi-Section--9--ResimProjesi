@@ -7,7 +7,8 @@ class SearchBar extends Component {
         search:""
     }
 
-    inputChange(event){
+    inputChange = (event) =>
+    {
 
         console.log(event.target.value)
 
@@ -19,7 +20,7 @@ class SearchBar extends Component {
     render() {
         return (
             <div className=" serach-bar-container ui input">
-                <input type="text" onChange={this.inputChange.bind(this)} placeholder="Search..."  />
+                <input type="text" onChange={this.inputChange} placeholder="Search..."  />
             </div>
         )
     }
