@@ -1,12 +1,23 @@
 import React, { Component } from "react";
 import SearchBar from "./SearchBar/SearchBar";
-import "./App.css"
+import "./App.css";
+import axios from "axios"
 
 class App extends Component {
 
   onSearchİmage = (search)=>
   {
-    console.log("App:" + search)
+    console.log("App:" + search);
+    axios.get("https://api.unsplash.com/search/photos", {
+      params:{
+        query: search
+      },
+      headers:{
+        Authorization : "Client-ID -cbyB4TJpc-1_GQIhHCS_fYPxo-lExnYKe7Pj9gtrmM"
+      }
+    } ).then((vepa) => {
+      console.log(vepa)
+    })
   }
 
   render() {
