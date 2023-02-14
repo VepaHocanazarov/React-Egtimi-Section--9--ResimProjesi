@@ -5,18 +5,24 @@ import axios from "axios"
 
 class App extends Component {
 
-  onSearchİmage = (search)=>
-  {
+  state ={
+    images:[]
+  }
+
+  onSearchİmage = async (search) => {
     console.log("App:" + search);
-    axios.get("https://api.unsplash.com/search/photos", {
-      params:{
+    const result = await axios.get("https://api.unsplash.com/search/photos", {
+      params: {
         query: search
       },
-      headers:{
-        Authorization : "Client-ID -cbyB4TJpc-1_GQIhHCS_fYPxo-lExnYKe7Pj9gtrmM"
+      headers: {
+        Authorization: "Client-ID -cbyB4TJpc-1_GQIhHCS_fYPxo-lExnYKe7Pj9gtrmM"
       }
-    } ).then((vepa) => {
-      console.log(vepa)
+    })
+    console.log(result.data.results);
+
+    this.setState({
+      images:result.data.results
     })
   }
 
@@ -24,6 +30,7 @@ class App extends Component {
     return (
       <div className="app-container" >
         <SearchBar onSearchİmage={this.onSearchİmage} />
+        {this.state.images.length} adet resim var
       </div>
     )
   }
