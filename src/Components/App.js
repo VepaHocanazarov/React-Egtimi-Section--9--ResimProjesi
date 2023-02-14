@@ -6,8 +6,7 @@ class App extends Component {
 
   onSearchİmage = (search)=>
   {
-
-    console.log("App" + search)
+    console.log("App:" + search)
   }
 
   render() {
@@ -18,7 +17,7 @@ class App extends Component {
     )
   }
 
-}
+};
 
 
 

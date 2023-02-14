@@ -17,14 +17,15 @@ class SearchBar extends Component {
     };
 
     serachinput = ()=>{
-        console.log("başarili")
+        console.log("başarili"),
+        this.props.onSearchİmage(this.state.search);
     }
 
     render() {
         return (
             <div className=" serach-bar-container ui input">
                 <input type="text" onKeyPress={(e) =>{
-              if(e.key === "Enter"){
+              if(e.key === "Enter" && "Tap"){
                 this.serachinput();
               };
                 } } 
