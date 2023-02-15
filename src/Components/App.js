@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SearchBar from "./SearchBar/SearchBar";
 import "./App.css";
 import axios from "axios"
+import ImageList from "./images/ImageList";
 
 class App extends Component {
 
@@ -30,7 +31,7 @@ class App extends Component {
     return (
       <div className="app-container" >
         <SearchBar onSearchİmage={this.onSearchİmage} />
-        {this.state.images.length} adet resim var
+       <ImageList/>
       </div>
     )
   }
