@@ -1,4 +1,5 @@
 import React from 'react'
+import "./imageslist.css"
 
 const ImageList = ({images}) => {
 
@@ -10,7 +11,7 @@ const ImageList = ({images}) => {
         }
         );
   return (
-    <div>
+    <div className='imageslist'>
       {/* {images.length} kadar  resim var */}
 
       {prepearImagesList}
