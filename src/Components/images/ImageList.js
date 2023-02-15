@@ -1,9 +1,20 @@
 import React from 'react'
 
-const ImageList = () => {
+const ImageList = ({images}) => {
+
+    const prepearImagesList = images.map(image =>
+        {
+            return (
+                <img key = {image.id} src={image.urls.small} alt="" />
+            )
+        }
+        );
   return (
     <div>
-      Hello
+      {/* {images.length} kadar  resim var */}
+
+      {prepearImagesList}
+     
     </div>
   )
 }

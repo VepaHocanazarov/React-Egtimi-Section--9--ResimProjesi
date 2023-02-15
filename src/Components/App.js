@@ -6,8 +6,8 @@ import ImageList from "./images/ImageList";
 
 class App extends Component {
 
-  state ={
-    images:[]
+  state = {
+    images: []
   }
 
   onSearchİmage = async (search) => {
@@ -23,7 +23,7 @@ class App extends Component {
     console.log(result.data.results);
 
     this.setState({
-      images:result.data.results
+      images: result.data.results
     })
   }
 
@@ -31,7 +31,7 @@ class App extends Component {
     return (
       <div className="app-container" >
         <SearchBar onSearchİmage={this.onSearchİmage} />
-       <ImageList/>
+        <ImageList images = {this.state.images}  />
       </div>
     )
   }
