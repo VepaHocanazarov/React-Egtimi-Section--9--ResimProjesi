@@ -5,6 +5,9 @@ class Images extends Component {
     constructor (props){
         super(props);
         this.myRef = React.createRef();
+        this.state = {
+          spanCount:0
+        }
     };
 
     componentDidMount ()  {
@@ -12,6 +15,11 @@ class Images extends Component {
 
       this.myRef.current.addEventListener("load",()=>{
         console.log(this.myRef.current.clientHeight);
+        const spanim = Math.round(this.myRef.current.clientHeight/5+1);
+
+        this.setState ({
+          spanCount:spanim
+        })
       })
     }
     
@@ -20,7 +28,7 @@ class Images extends Component {
 
         const {image} = this.props;
         return (
-            <img ref = {this.myRef} key={image.id} src={image.urls.small} alt="" />
+            <img style={{gridRowEnd:` span ${this.state.spanCount} `}} ref = {this.myRef} key={image.id} src={image.urls.small} alt="" />
 
         );
     }

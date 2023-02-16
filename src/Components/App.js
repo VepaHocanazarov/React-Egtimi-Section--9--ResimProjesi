@@ -11,7 +11,7 @@ class App extends Component {
   }
 
   onSearchİmage = async (search) => {
-    console.log("App:" + search);
+    // console.log("App:" + search);
     const result = await axios.get("https://api.unsplash.com/search/photos", {
       params: {
         query: search
@@ -20,7 +20,7 @@ class App extends Component {
         Authorization: "Client-ID -cbyB4TJpc-1_GQIhHCS_fYPxo-lExnYKe7Pj9gtrmM"
       }
     })
-    console.log(result.data.results);
+    // console.log(result.data.results);
 
     this.setState({
       images: result.data.results
